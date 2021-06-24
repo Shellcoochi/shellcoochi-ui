@@ -1,0 +1,9 @@
+{
+  "name": "shellcoochi-ui",
+  "version": "1.0.0",
+  "description": "WITH NO WAX",
+  "main": "index.js",
+  "repository": "https://github.com/Shellcoochi/shellcoochi-ui.git",
+  "author": "shellcoochi",
+  "license": "MIT"
+}
