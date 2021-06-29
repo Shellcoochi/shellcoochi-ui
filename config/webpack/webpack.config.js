@@ -12,10 +12,11 @@ module.exports = {
         loader: "babel-loader",
         options: { presets: ["@babel/env"] },
       },
+      { test: /\.tsx?$/, loader: "ts-loader" },
       {
         test: /\.less$/,
         use: [
-          MiniCssExtractPlugin.loader,//mini-css-extract-plugin 与 "style-loader"冲突 报错ReferenceError: window is not defined
+          MiniCssExtractPlugin.loader, //mini-css-extract-plugin 与 "style-loader"冲突 报错ReferenceError: window is not defined
           // { loader: "style-loader" },
           {
             //配置CSS module
@@ -35,10 +36,10 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ["*", ".js", ".jsx"],
+    extensions: ["*", ".js", ".jsx", ".ts", ".tsx", ".json"],
     alias: {
       "@src": path.resolve("src"),
-      "@component": path.resolve("src/component"),
+      "@components": path.resolve("src/components"),
     },
   },
   output: {

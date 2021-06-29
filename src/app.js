@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Button from '@component/button'
+import Button from "./components/button";
 
 import styles from "./app.module.less";
 
@@ -14,10 +14,15 @@ const Main = (props) => (
       <li>
         <Link to="/inbox">Inbox</Link>
       </li>
+      <li>
+        <Link to="/button">button</Link>
+      </li>
     </ul>
     {props.children}
   </div>
 );
+
+const button = () => <Button compiler="TypeScript" framework="React" />;
 
 const About = () => <h3 className={styles.about}>About</h3>;
 
@@ -37,11 +42,12 @@ const ErrorPage = () => (
 const Message = (props) => <h3>Message {props.params.id}</h3>;
 
 const App = () => {
-  console.log('console.log')
+  console.log("console.log");
   return (
     <Router>
       <Switch>
         <Route exact path="/" component={Main} />
+        <Route exact path="/button" component={button} />
         <Route exact path="/about" component={About} />
         <Route exact path="/inbox" component={Inbox} />
         <Route component={ErrorPage}></Route>

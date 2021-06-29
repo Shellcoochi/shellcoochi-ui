@@ -12,7 +12,7 @@ const { DEV_SERVER_PORT } = process.env;
 
 const devConfig = merge(common, {
   mode: "development",
-  devtool: "inline-source-map",
+ devtool: "source-map",
   devServer: {
     contentBase: path.resolve(__dirname, "../../dist"),
     port: DEV_SERVER_PORT,
@@ -24,7 +24,7 @@ const devConfig = merge(common, {
       console.log(`
 			 
 ===================================
-      ${pkg.description} 项目
+      ${pkg.description} 
 -----------------------------------
 ===================================
       `);
