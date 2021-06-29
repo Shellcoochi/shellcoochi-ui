@@ -1,19 +1,19 @@
 import * as React from "react";
+import classNames from "classnames";
 
-export interface HelloProps {
-  compiler: string;
-  framework: string;
+import styles from "./index.module.less";
+
+declare const ButtonTypes: ["default", "primary", "ghost"];
+declare type ButtonType = typeof ButtonTypes[number];
+export interface BaseButtonProps {
+  children?: React.ReactNode;
+  type?: ButtonType;
 }
-
-// 'HelloProps' describes the shape of props.
-// State is never set so we use the '{}' type.
-class Button extends React.Component<HelloProps, {}> {
+class Button extends React.Component<BaseButtonProps, {}> {
   render() {
-    return (
-      <h1>
-        Hello from {this.props.compiler} and {this.props.framework}!
-      </h1>
-    );
+    const classes = classNames(styles["scc-btn"]);
+
+    return <button className={classes}>{this.props.children}</button>;
   }
 }
 

@@ -22,7 +22,7 @@ const Main = (props) => (
   </div>
 );
 
-const button = () => <Button compiler="TypeScript" framework="React" />;
+const button = () => <Button>SHELLCOOCHI</Button>;
 
 const About = () => <h3 className={styles.about}>About</h3>;
 
