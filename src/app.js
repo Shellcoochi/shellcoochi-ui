@@ -22,7 +22,12 @@ const Main = (props) => (
   </div>
 );
 
-const button = () => <Button>SHELLCOOCHI</Button>;
+const button = () => (
+  <div style={{ padding: "100px" }}>
+    <Button>SHELLCOOCHI</Button>
+    <Button disabled>disabled</Button>
+  </div>
+);
 
 const About = () => <h3 className={styles.about}>About</h3>;
 

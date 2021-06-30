@@ -8,10 +8,14 @@ declare type ButtonType = typeof ButtonTypes[number];
 export interface BaseButtonProps {
   children?: React.ReactNode;
   type?: ButtonType;
+  disabled?: boolean;
 }
 class Button extends React.Component<BaseButtonProps, {}> {
   render() {
-    const classes = classNames(styles["scc-btn"]);
+    const { disabled } = this.props;
+    const classes = classNames(styles["scc-default-btn"], {
+      [styles["disabled"]]: disabled,
+    });
 
     return <button className={classes}>{this.props.children}</button>;
   }
