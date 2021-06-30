@@ -3,7 +3,7 @@ import classNames from "classnames";
 
 import styles from "./index.module.less";
 
-declare const ButtonTypes: ["default", "primary", "ghost"];
+declare const ButtonTypes: ["default", "dashed", "primary", "ghost"];
 declare type ButtonType = typeof ButtonTypes[number];
 export interface BaseButtonProps {
   children?: React.ReactNode;
@@ -13,9 +13,10 @@ export interface BaseButtonProps {
 }
 class Button extends React.Component<BaseButtonProps, {}> {
   render() {
-    const { disabled, onClick } = this.props;
-    const classes = classNames(styles["scc-default-btn"], {
-      [styles["disabled"]]: disabled,
+    const { type = "default", disabled, onClick } = this.props;
+    const classes = classNames(styles["scc-btn"], styles[`scc-${type}-btn`], {
+      [styles["scc-dashed-btn"]]: disabled,
+      [styles["scc-btn-disabled"]]: disabled,
     });
 
     return (
