@@ -24,11 +24,11 @@ const Main = (props) => (
 
 const button = () => (
   <div style={{ padding: "100px" }}>
-    <Button size={"small"}>SHELLCOOCHI</Button>
+    <Button>default</Button>
+    <Button size={"small"}>small</Button>
+    <Button size={"large"}>large</Button>
     <Button disabled>disabled</Button>
-    <Button size={"large"} type={"dashed"}>
-      dashed
-    </Button>
+    <Button type={"dashed"}>dashed</Button>
   </div>
 );
 
