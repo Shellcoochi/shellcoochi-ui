@@ -9,15 +9,20 @@ export interface BaseButtonProps {
   children?: React.ReactNode;
   type?: ButtonType;
   disabled?: boolean;
+  onClick?: React.MouseEventHandler<HTMLElement>;
 }
 class Button extends React.Component<BaseButtonProps, {}> {
   render() {
-    const { disabled } = this.props;
+    const { disabled, onClick } = this.props;
     const classes = classNames(styles["scc-default-btn"], {
       [styles["disabled"]]: disabled,
     });
 
-    return <button className={classes}>{this.props.children}</button>;
+    return (
+      <button onClick={onClick} className={classes}>
+        {this.props.children}
+      </button>
+    );
   }
 }
 

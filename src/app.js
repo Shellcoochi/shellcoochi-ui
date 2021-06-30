@@ -24,7 +24,13 @@ const Main = (props) => (
 
 const button = () => (
   <div style={{ padding: "100px" }}>
-    <Button>SHELLCOOCHI</Button>
+    <Button
+      onClick={() => {
+        alert(123);
+      }}
+    >
+      SHELLCOOCHI
+    </Button>
     <Button disabled>disabled</Button>
   </div>
 );
