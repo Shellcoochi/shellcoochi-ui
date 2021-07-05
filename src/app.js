@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Button from "./components/button";
-import Breadcrumb from "./components/breadcrumb";
+import ButtonDemo from "./demo/button";
+import BreadcrumbDemo from "./demo/breadcrumb";
 
 import styles from "./app.module.less";
 
@@ -23,35 +23,6 @@ const Main = (props) => (
       </li>
     </ul>
     {props.children}
-  </div>
-);
-
-const breadcrumb = () => (
-  <div style={{ padding: "50px" }}>
-    <h2>breadcrumb</h2>
-    <Breadcrumb>
-      <Breadcrumb.Item separator="/" href="/">
-        home
-      </Breadcrumb.Item>
-      <Breadcrumb.Item separator="/">breadcrumb</Breadcrumb.Item>
-    </Breadcrumb>
-  </div>
-);
-
-const button = () => (
-  <div style={{ padding: "50px" }}>
-    <Breadcrumb>
-      <Breadcrumb.Item separator="/" href="/">
-        home
-      </Breadcrumb.Item>
-      <Breadcrumb.Item separator="/">button</Breadcrumb.Item>
-    </Breadcrumb>
-    <h2>BUTTON</h2>
-    <Button>default</Button>
-    <Button size={"small"}>small</Button>
-    <Button size={"large"}>large</Button>
-    <Button disabled>disabled</Button>
-    <Button type={"dashed"}>dashed</Button>
   </div>
 );
 
@@ -78,8 +49,8 @@ const App = () => {
     <Router>
       <Switch>
         <Route exact path="/" component={Main} />
-        <Route exact path="/button" component={button} />
-        <Route exact path="/breadcrumb" component={breadcrumb} />
+        <Route exact path="/button" component={ButtonDemo} />
+        <Route exact path="/breadcrumb" component={BreadcrumbDemo} />
         <Route exact path="/about" component={About} />
         <Route exact path="/inbox" component={Inbox} />
         <Route component={ErrorPage}></Route>
