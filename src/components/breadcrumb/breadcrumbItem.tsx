@@ -6,15 +6,16 @@ import styles from "./style/index.module.less";
 export interface BreadcrumbItemProps {
   separator?: React.ReactNode;
   children?: React.ReactNode;
+  href?: string;
 }
 
 class BreadcrumbItem extends React.Component<BreadcrumbItemProps, any> {
   render() {
-    const { separator = "/", children } = this.props;
+    const { separator = "/", children, href } = this.props;
     return (
       <span>
         <span>{separator}</span>
-        {children}
+        {href ? <a href={href}>{children}</a> : children}
       </span>
     );
   }
