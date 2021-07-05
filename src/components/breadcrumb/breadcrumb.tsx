@@ -12,16 +12,16 @@ export interface BreadcrumbProps {
 class Breadcrumb extends React.Component<BreadcrumbProps, any> {
   static Item = BreadcrumbItem;
 
-  getItems = (children: React.ReactNode): Array<React.ReactNode> => {
-    const items: Array<React.ReactNode> = [];
-    React.Children.forEach(children, (item, i) => {
-      items.push(item);
-    });
-    return items;
-  };
+  // getItems = (children: React.ReactNode): Array<React.ReactNode> => {
+  //   const items: Array<React.ReactNode> = [];
+  //   React.Children.forEach(children, (item, i) => {
+  //     items.push(item);
+  //   });
+  //   return items;
+  // };
   render() {
     const { children } = this.props;
-    return <div>{this.getItems(children)}</div>;
+    return <div>{children}</div>;
   }
 }
 
