@@ -16,10 +16,11 @@ export interface BaseButtonProps {
 }
 class Switch extends React.Component<BaseButtonProps, {}> {
   render() {
-    
-    return (
-     <div>switch</div>
+    const classes = classNames(
+      styles[`scc-switch`],
+      styles[`scc-switch-unchecked`]
     );
+    return <button className={classes}><span>switch</span></button>;
   }
 }
 

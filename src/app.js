@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import ButtonDemo from "./demo/button";
 import BreadcrumbDemo from "./demo/breadcrumb";
+import SwitchDemo from "./demo/switch";
 
 import styles from "./app.module.less";
 
@@ -20,6 +21,9 @@ const Main = (props) => (
       </li>
       <li>
         <Link to="/breadcrumb">breadcrumb</Link>
+      </li>
+      <li>
+        <Link to="/switch">switch</Link>
       </li>
     </ul>
     {props.children}
@@ -51,6 +55,7 @@ const App = () => {
         <Route exact path="/" component={Main} />
         <Route exact path="/button" component={ButtonDemo} />
         <Route exact path="/breadcrumb" component={BreadcrumbDemo} />
+        <Route exact path="/switch" component={SwitchDemo} />
         <Route exact path="/about" component={About} />
         <Route exact path="/inbox" component={Inbox} />
         <Route component={ErrorPage}></Route>
