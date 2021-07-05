@@ -13,8 +13,8 @@ class BreadcrumbItem extends React.Component<BreadcrumbItemProps, any> {
     const { separator = "/", children } = this.props;
     return (
       <span>
-        {children}
         <span>{separator}</span>
+        {children}
       </span>
     );
   }

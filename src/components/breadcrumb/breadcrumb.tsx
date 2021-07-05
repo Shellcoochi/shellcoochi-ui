@@ -6,18 +6,16 @@ import styles from "./style/index.module.less";
 import { string } from "prop-types";
 
 export interface BreadcrumbProps {
-  children?: React.ReactNode;
+  children?: BreadcrumbItem;
 }
-
 class Breadcrumb extends React.Component<BreadcrumbProps, any> {
-  static Item: typeof BreadcrumbItem;
-  getItems = (children: React.ReactNode): Array<React.ReactNode> => {
-    const list = Array(children);
+  static Item: BreadcrumbItem;
+
+  getItems = (children: BreadcrumbItem): Array<React.ReactNode> => {
     const items: Array<React.ReactNode> = [];
-    list.forEach((item) => {
-      if (item) {
-        items.push(<BreadcrumbItem>asdf</BreadcrumbItem>);
-      }
+    React.Children.forEach(children, (item,i) => {
+      const { props } = item;
+      items.push(<BreadcrumbItem key={i} {...props} />);
     });
     return items;
   };

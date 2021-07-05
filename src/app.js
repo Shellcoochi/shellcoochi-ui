@@ -30,14 +30,18 @@ const breadcrumb = () => (
   <div style={{ padding: "50px" }}>
     <h2>breadcrumb</h2>
     <Breadcrumb>
-      <Breadcrumb.Item>dsf</Breadcrumb.Item>
-      <Breadcrumb.Item>dsf</Breadcrumb.Item>
+      <Breadcrumb.Item separator='/'><a href="/">home</a></Breadcrumb.Item>
+      <Breadcrumb.Item separator='/'>breadcrumb</Breadcrumb.Item>
     </Breadcrumb>
   </div>
 );
 
 const button = () => (
   <div style={{ padding: "50px" }}>
+    <Breadcrumb>
+      <Breadcrumb.Item separator='/'><a href="/">home</a></Breadcrumb.Item>
+      <Breadcrumb.Item separator='/'>button</Breadcrumb.Item>
+    </Breadcrumb>
     <h2>BUTTON</h2>
     <Button>default</Button>
     <Button size={"small"}>small</Button>
