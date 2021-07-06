@@ -4,6 +4,8 @@ import classNames from "classnames";
 import styles from "./style/index.module.less";
 export interface SwitchProps {
   checked?: boolean;
+  checkedChildren?: string;
+  unCheckedChildren?: string;
   onClick?: React.MouseEventHandler<HTMLElement>;
 }
 
@@ -25,13 +27,14 @@ class Switch extends React.Component<SwitchProps, SwitchState> {
   };
   render() {
     const { checked } = this.state;
+    const { checkedChildren, unCheckedChildren } = this.props;
     const classes = classNames(
       styles[`scc-switch`],
-      styles[`scc-switch-${checked?'checked':'unchecked'}`]
+      styles[`scc-switch-${checked ? "checked" : "unchecked"}`]
     );
     return (
       <button onClick={this.handleSwitchChange} className={classes}>
-        <span>switch</span>
+        <span>{checked ? checkedChildren : unCheckedChildren}</span>
       </button>
     );
   }
