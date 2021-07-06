@@ -6,6 +6,7 @@ export interface SwitchProps {
   checked?: boolean;
   checkedChildren?: string;
   unCheckedChildren?: string;
+  disabled?: boolean;
   onClick?: React.MouseEventHandler<HTMLElement>;
 }
 
@@ -27,11 +28,12 @@ class Switch extends React.Component<SwitchProps, SwitchState> {
   };
   render() {
     const { checked } = this.state;
-    const { checkedChildren, unCheckedChildren } = this.props;
-    const classes = classNames(
-      styles[`scc-switch`],
-      styles[`scc-switch-${checked ? "checked" : "unchecked"}`]
-    );
+    const { checkedChildren, unCheckedChildren, disabled } = this.props;
+    const classes = classNames(styles[`scc-switch`], {
+      [styles[`scc-switch-checked`]]: checked,
+      [styles[`scc-switch-unchecked`]]: !checked,
+      [styles[`scc-switch-disabled`]]: disabled,
+    });
     return (
       <button onClick={this.handleSwitchChange} className={classes}>
         <span>{checked ? checkedChildren : unCheckedChildren}</span>

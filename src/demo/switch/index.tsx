@@ -12,6 +12,7 @@ const SwitchDemo = () => (
       <Breadcrumb.Item separator="/">switch</Breadcrumb.Item>
     </Breadcrumb>
     <Switch checkedChildren={"switch-on"} unCheckedChildren={"switch-off"} />
+    <Switch disabled={true} checkedChildren={"switch-on"} unCheckedChildren={"switch-off"} />
   </div>
 );
 
