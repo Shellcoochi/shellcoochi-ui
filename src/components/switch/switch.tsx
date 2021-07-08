@@ -22,6 +22,10 @@ class Switch extends React.Component<SwitchProps, SwitchState> {
   }
   handleSwitchChange = () => {
     const { checked } = this.state;
+    const { disabled } = this.props;
+    if (disabled) {
+      return false;
+    }
     this.setState({
       checked: !checked,
     });
