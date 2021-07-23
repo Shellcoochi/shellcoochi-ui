@@ -6,11 +6,16 @@ import styles from "./style/index.module.less";
 export interface CheckboxProps {
   disabled?: boolean;
   children?: React.ReactNode;
+  onChange?: (e: CheckboxChangeEvent) => void;
+}
+
+export interface CheckboxChangeEvent {
+  target: { checked: boolean };
 }
 
 class Checkbox extends React.Component<CheckboxProps> {
   render() {
-    const { disabled, children } = this.props;
+    const { disabled, children, onChange } = this.props;
     const labelClasses = classNames(styles["scc-checkbox-wrapper"], {
       [styles["scc-checkbox-wrapper-disabled"]]: disabled,
     });
@@ -20,7 +25,12 @@ class Checkbox extends React.Component<CheckboxProps> {
     return (
       <>
         <label className={labelClasses}>
-          <input className={inputClasses} disabled={disabled} type="checkbox" />
+          <input
+            className={inputClasses}
+            disabled={disabled}
+            type="checkbox"
+            onChange={onChange}
+          />
           <span>{children}</span>
         </label>
       </>

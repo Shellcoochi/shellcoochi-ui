@@ -11,7 +11,13 @@ const CheckboxDemo = () => (
       </Breadcrumb.Item>
       <Breadcrumb.Item separator="/">checkbox</Breadcrumb.Item>
     </Breadcrumb>
-    <Checkbox>basic</Checkbox>
+    <Checkbox
+      onChange={(e) => {
+        console.log("checked:", e.target.checked);
+      }}
+    >
+      basic
+    </Checkbox>
     <Checkbox disabled>disabled</Checkbox>
   </div>
 );
