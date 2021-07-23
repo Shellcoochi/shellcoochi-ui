@@ -11,7 +11,8 @@ const CheckboxDemo = () => (
       </Breadcrumb.Item>
       <Breadcrumb.Item separator="/">checkbox</Breadcrumb.Item>
     </Breadcrumb>
-    <Checkbox />
+    <Checkbox>basic</Checkbox>
+    <Checkbox disabled>disabled</Checkbox>
   </div>
 );
 
