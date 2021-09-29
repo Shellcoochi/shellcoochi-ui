@@ -5,7 +5,7 @@ import Breadcrumb from "../../components/breadcrumb";
 const options = [
   { label: "Apple", value: "Apple" },
   { label: "Pear", value: "Pear" },
-  { label: "Orange", value: "Orange" },
+  { label: "Orange", value: "Orange", disabled: true },
 ];
 
 const CheckboxDemo = () => (
@@ -26,7 +26,12 @@ const CheckboxDemo = () => (
     </Checkbox>
     <Checkbox disabled>disabled</Checkbox>
     <br />
-    <Checkbox.Group options={options} />
+    <Checkbox.Group
+      options={options}
+      onChange={(checkedValues) => {
+        console.log("checked = ", checkedValues);
+      }}
+    />
   </div>
 );
 
